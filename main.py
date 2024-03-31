@@ -22,6 +22,10 @@ def parse_arguments():
 
 if __name__ == '__main__':
     args = parse_arguments()
+    if args.num_philosophers <= 0:
+        print('Number must be positive non-zero!')
+        exit(1)
+    
     if args.solution == 'classic':
         table = ClassicDiningTable(number=args.num_philosophers)
     else:
