@@ -1,10 +1,11 @@
-from . import Philosopher, Fork
+from . import Fork
+from .philosopher import ClassicPhilosopher
 
 
-class DiningTable:
+class ClassicDiningTable:
     def __init__(self, number: int) -> None:
         self.forks = [Fork() for _ in range(number)]
-        self.philosophers = [Philosopher(index=index, forks=self.forks)
+        self.philosophers = [ClassicPhilosopher(index=index, forks=self.forks)
                              for index in range(number)]
 
     def start(self) -> None:

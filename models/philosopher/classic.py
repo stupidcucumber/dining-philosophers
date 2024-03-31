@@ -1,11 +1,11 @@
 import threading
 import time
-from .fork import Fork
+from ..fork import Fork
 
 
-class Philosopher(threading.Thread):
+class ClassicPhilosopher(threading.Thread):
     def __init__(self, index: int, forks: list[Fork], name: str | None = None) -> None:
-        super(Philosopher, self).__init__(name=name)
+        super(ClassicPhilosopher, self).__init__(name=name)
         self.index = index
         self.forks = forks
 
