@@ -1,4 +1,5 @@
 import argparse
+from models import DiningTable
 
 
 def parse_arguments():
@@ -14,3 +15,5 @@ def parse_arguments():
 
 if __name__ == '__main__':
     args = parse_arguments()
+    table = DiningTable(number=args.num_philosophers)
+    table.start()
