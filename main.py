@@ -1,5 +1,5 @@
 import argparse
-from models import ClassicDiningTable, DijkstraDiningTable
+from models import ClassicDiningTable, DijkstraDiningTable, AllahTable
 
 
 def parse_arguments():
@@ -13,7 +13,7 @@ def parse_arguments():
     parser.add_argument(
         '--solution',
         type=str,
-        choices=['classic', 'dijkstra'],
+        choices=['classic', 'dijkstra', 'allah'],
         default='classic',
         help='The solution to the Dining problem.'
     )
@@ -28,6 +28,8 @@ if __name__ == '__main__':
     
     if args.solution == 'classic':
         table = ClassicDiningTable(number=args.num_philosophers)
+    elif args.solution == 'allah':
+        table = AllahTable(number=args.num_philosophers)
     else:
         table = DijkstraDiningTable(number=args.num_philosophers)
     table.start()

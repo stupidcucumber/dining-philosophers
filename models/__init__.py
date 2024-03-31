@@ -1,2 +1,2 @@
 from .fork import Fork
-from .table import ClassicDiningTable, DijkstraDiningTable
+from .table import ClassicDiningTable, DijkstraDiningTable, AllahTable
